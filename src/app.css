@@ -1,0 +1,56 @@
+/* Application-wide styles for DEV@Deakin */
+:root {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  color: #1f2937;
+  background: #f5f5f5;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+html { min-width: 320px; scroll-behavior: smooth; }
+body { margin: 0; min-width: 320px; min-height: 100vh; background: #f5f5f5; }
+*, *::before, *::after { box-sizing: border-box; }
+img { display: block; max-width: 100%; }
+button, input, textarea, select { font: inherit; }
+button, a { -webkit-tap-highlight-color: transparent; }
+a { cursor: pointer; }
+button { cursor: pointer; }
+button:disabled { cursor: not-allowed; opacity: .65; }
+input:focus-visible, textarea:focus-visible, button:focus-visible, a:focus-visible {
+  outline: 2px solid #0d9488;
+  outline-offset: 2px;
+}
+::selection { background: #99f6e4; color: #134e4a; }
+
+/* Main navigation */
+header { position: relative; z-index: 5; }
+header nav { min-height: 54px; }
+header nav input { min-width: 0; }
+
+/* Home page sections */
+section { scroll-margin-top: 70px; }
+#about p { line-height: 1.8; }
+#work img { object-fit: cover; }
+#contact { margin-top: 0; }
+#contact input { max-width: 100%; }
+
+/* Content cards and image gallery */
+section img { height: auto; }
+#about img { width: 10rem; height: 10rem; }
+#contact a { color: inherit; text-decoration: none; }
+#contact a:hover { text-decoration: underline; }
+
+/* Login and sign-up forms */
+main form input, main form textarea, main form select { max-width: 100%; }
+main form button { transition: background-color .2s ease, transform .2s ease; }
+main form button:not(:disabled):active { transform: translateY(1px); }
+
+/* Post form stylesheet is maintained separately in PostPage.css. */
+@media (max-width: 640px) {
+  header nav { flex-wrap: wrap; gap: .6rem; padding-top: .65rem; padding-bottom: .65rem; }
+  header nav > div:first-of-type { order: 3; flex-basis: 100%; }
+  header nav > div:last-of-type { margin-left: auto; gap: .65rem; }
+  #contact form { width: 100%; flex-wrap: wrap; }
+  #contact form input { flex: 1 1 180px; min-width: 0; }
+}
